@@ -38,7 +38,31 @@ while True:
             opcaoInterna = int(input('Opção: '))
             if opcaoInterna == 2:
                 break
-    if opcao == 4:
+        
+    elif opcao == 2:
+        print('')
+        linhasTitulo()
+        print(f'{"CADASTRO DE CLIENTE":^20}')
+        linhasTitulo()
+        while True:
+            print('')
+            codigoCliente = str(input('Código do cliente: ')).strip()
+            nomeCliente = str(input('Nome do cliente: ')).strip().upper()
+            with open('cadastroCliente.txt', 'a') as cadastroCliente:
+                cadastroCliente.write('\n')
+                cadastroCliente.write(codigoCliente)
+                cadastroCliente.write(',')
+                cadastroCliente.write(nomeCliente)
+                
+            print('')
+            print('CLIENTE CADASTRADO COM SUCESSO!')
+            print('')
+            print('1 - Cadastrar outro cliente')
+            print('2 - Voltar ao menu anterior')
+            opcaoInterna = int(input('Opção: '))
+            if opcaoInterna == 2:
+                break
+    elif opcao == 4:
         break
 
 linhasTitulo()
