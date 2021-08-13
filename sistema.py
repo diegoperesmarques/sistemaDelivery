@@ -4,7 +4,7 @@ def linhasTitulo():
 linhasTitulo()
 print(f'{"SISTEMA DELIVERY":^30}')
 linhasTitulo()
-print('')
+#print('')
 
 while True: 
     print('')
