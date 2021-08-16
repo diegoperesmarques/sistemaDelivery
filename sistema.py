@@ -1,15 +1,11 @@
-def linhasTitulo():
-    print('-=' * 20)
+from funcoes import formatacoes
 
-linhasTitulo()
-print(f'{"SISTEMA DELIVERY":^30}')
-linhasTitulo()
+formatacoes.tituloCompleto('SISTEMA DELIVERY')
 #print('')
 
 while True: 
     print('')
-    print(f'{"MENU PRINCIPAL":^20}')
-    linhasTitulo()
+    formatacoes.linhasTitulo('MENU PRINCIPAL')
     print('Escolha uma opção abaixo: ')
     print('1 - Cadastrar produto')
     print('2 - Cadastrar cliente')
@@ -18,9 +14,7 @@ while True:
     opcao = int(input('Opção: '))
     if opcao == 1:
         print('')
-        linhasTitulo()
-        print(f'{"CADASTRO DE PRODUTO":^20}')
-        linhasTitulo()
+        formatacoes.linhasTitulo('CADASTRO DE PRODUTO')
         while True:
             print('')
             codigoProduto = input('Código do produto: ')
@@ -31,8 +25,7 @@ while True:
                 cadastroProduto.write(',')
                 cadastroProduto.write(nomeProduto)
             
-            print('')
-            print('PRODUTO CADASTRADO COM SUCESSO!')
+            formatacoes.linhaInformativo('PRODUTO CADASTRADO COM SUCESSO!')
             print('1 - Cadastrar outro produto')
             print('2 - Voltar ao menu anterior')
             opcaoInterna = int(input('Opção: '))
@@ -41,9 +34,7 @@ while True:
         
     elif opcao == 2:
         print('')
-        linhasTitulo()
-        print(f'{"CADASTRO DE CLIENTE":^20}')
-        linhasTitulo()
+        formatacoes.linhasTitulo('CADASTRO DE CLIENTE')
         while True:
             print('')
             codigoCliente = str(input('Código do cliente: ')).strip()
@@ -65,6 +56,4 @@ while True:
     elif opcao == 4:
         break
 
-linhasTitulo()
-print(f'{"SISTEMA ENCERRADO":^20}')
-linhasTitulo()
+formatacoes.tituloCompleto('SISTEMA ENCERRADO')
