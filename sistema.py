@@ -1,4 +1,5 @@
 from funcoes import formatacoes
+from funcoes import cadastro
 
 formatacoes.tituloCompleto('SISTEMA DELIVERY')
 #print('')
@@ -19,13 +20,10 @@ while True:
             print('')
             codigoProduto = input('Código do produto: ')
             nomeProduto = str(input('Nome do produto: ')).strip().upper()
-            with open('cadastroProduto.txt', 'a') as cadastroProduto:
-                cadastroProduto.write('\n')
-                cadastroProduto.write(codigoProduto)
-                cadastroProduto.write(',')
-                cadastroProduto.write(nomeProduto)
+            cadastro.cadastroProduto(codigoProduto, nomeProduto)
             
             formatacoes.linhaInformativo('PRODUTO CADASTRADO COM SUCESSO!')
+            cadastro.ultimoCodigoProdutoCadastrado()
             print('1 - Cadastrar outro produto')
             print('2 - Voltar ao menu anterior')
             opcaoInterna = int(input('Opção: '))
